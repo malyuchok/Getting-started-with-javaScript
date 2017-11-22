@@ -1,0 +1,121 @@
+body {
+	padding: 30px;
+	background-image: url('img/main.jpeg');
+	background-size: cover;
+}
+
+.content {
+	font-size: 19px;
+	line-height: 1.5;
+	max-width: 500px;
+	margin: 0 auto;
+	position: relative;
+	border-radius: 5px;
+}
+
+.floater {
+	background: #FFF;	
+	transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.4) all;
+	margin-bottom: 30px;
+	z-index: 11;
+}
+
+.floater input[type=text] {
+	border: none;
+	box-shadow: none;
+	font-size: 14px;
+	transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.4) all;
+	color: #000;
+}
+
+.floater-bottom {
+	padding: 6px 10px 8px;
+	text-align: right;
+	border-top: 1px solid #DDD;
+}
+
+.floater-bottom button {
+	padding: 4px 8px;
+	font-size: 10px;
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.80);
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transform: 0.3s ease opacity;
+	z-index: 10;
+	pointer-events: none;
+}
+
+body.show-floater .floater {
+	transform: scale(1.1);
+}
+
+body.show-floater .floater input[type="text"] {
+	/* padding: 50px 20px; */
+	font-size: 18px;
+	color: #000;
+}
+
+body.show-floater .overlay {
+	opacity: 1;
+	pointer-events: all;
+}
+
+/* ======================== */
+
+.bookmark-list {
+	position: relative;
+	z-index: 9;
+}
+
+.bookmark {
+	display: flex;
+	position: relative;
+	background: #FFF;
+	color: #999;
+	padding: 20px;
+	font-size: 16px;
+	transition: 0.3s ease all;
+	border-bottom: 1px solid #DDD;
+}
+
+.bookmark:hover {
+	color: #1CE;
+	text-decoration: none;
+}
+
+.bookmark:first-child {
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.bookmark:last-child {
+	border-bottom-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-bottom: 0;
+}
+
+.bookmark .title {
+	display: flex;
+	align-items: center;
+}
+
+.bookmark .glyphicon-remove {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	color: #EEE;
+	transition: 0.3s ease color;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+.bookmark:hover .glyphicon-remove {
+	color: #AAA;
+}
